@@ -1,6 +1,4 @@
-# Modular State Aware Crawler
-
-Clean repo for the reimplementation of the state-aware-crawler and zustandv
+# SWaTEval Framework
 
 # How to run
 
