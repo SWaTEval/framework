@@ -1,0 +1,65 @@
+redis:
+  host: "redis.docker"
+  port: 6379
+  db: 0
+
+proxy:
+  scheme: "http"
+  host: "localhost"
+  port: 7000
+  auto_start: False
+
+mongo_db_credentials:
+  mongo_host: "mongo.docker"
+  mongo_port: 27017
+  username:
+  password:
+
+mongo_db_names:
+  interactions: "interactions"
+  states: "states"
+  endpoints: "endpoints"
+  endpoint_clustering: "endpoint_clustering"
+  interaction_clustering: "interaction_clustering"
+
+vulnerable_web_app:
+  docker_image: "evaluation-framework"
+  app_port: 3000
+  app_scheme: "http"
+
+workers:
+  execution_type: "sequential"
+  crawler_module: "scanner.Crawling.Simple.SimpleCrawler"
+  crawler_class: "SimpleCrawler"
+
+  endpoint_extractor_module: "scanner.Detection.Basic.EndpointExtractor"
+  endpoint_detector_module: "scanner.Detection.ClusteringBased.EndpointDetector"
+  state_change_detector_module: "scanner.Detection.ClusteringBased.StateChangeDetector"
+  state_detector_module: "scanner.Detection.ClusteringBased.StateDetector"
+
+state_navigator:
+  max_revisits: 0
+
+endpoint_extractor:
+  restrict_host: True
+  mark_always_clean: False
+
+endpoint_detector:
+  distance_type: "hash2vec"
+  field_for_distance: "hash"
+  dbscan_additional_metric: "euclidean"
+  delete_dirty: False
+
+state_change_detector:
+  distance_type: "hash2vec"
+  field_for_distance: "hash"
+  dbscan_additional_metric: "euclidean"
+  only_interactions_from_fuzzer: True
+
+state_detector:
+  distance_type: "hash2vec"
+  field_for_distance: "hash"
+  dbscan_additional_metric: "euclidean"
+  delete_collapsed: False
+
+random_seed: 3

@@ -1,0 +1,45 @@
+version: '3.3'
+
+services:
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+
+  wackopicko:
+      container_name: wackopicko
+      ports:
+          - '8080:80'
+      image: adamdoupe/wackopicko
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - '8081:8081'
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
+      
+  redis:
+      container_name: redis
+      image: redis
+      restart: always
+        
+  rq-dashboard:
+      container_name: rq-dashboard
+      ports:
+          - '8082:9181'
+      image: eoranged/rq-dashboard
+      environment:
+          - RQ_DASHBOARD_REDIS_URL=redis://redis:6379
+      restart: always
+        
+  rebrow:
+      container_name: rebrow
+      ports:
+          - '8083:5001'
+      links:
+          - 'redis:redis'
+      image: marian/rebrow
