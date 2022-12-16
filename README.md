@@ -25,7 +25,7 @@ conda actiavte scanner
 pip install -r requirements.txt
 ```
 
-4. Create a Docker image of the [evaluation-target](https://github.com/SWaTEval/framework) by following the steps described in its repository
+4. Create a Docker image of the [evaluation-target](https://github.com/SWaTEval/evaluation-target) by following the steps described in its repository
 
 5. Run the needed Docker containers using [Docker Compose](https://docs.docker.com/compose/): 
 
