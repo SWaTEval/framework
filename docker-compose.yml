@@ -1,17 +1,10 @@
 version: '3.3'
 
 services:
-
   mongo:
     container_name: mongo
     image: mongo
     restart: always
-
-  wackopicko:
-      container_name: wackopicko
-      ports:
-          - '8080:80'
-      image: adamdoupe/wackopicko
 
   mongo-express:
     container_name: mongo-express
