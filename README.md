@@ -16,7 +16,7 @@ bash ./Miniconda3-latest-Linux-x86_64.sh
 
 ```
 conda create -n "scanner" python=3.8
-conda actiavte scanner
+conda activate scanner
 ```
 
 3. Install the requirements:
