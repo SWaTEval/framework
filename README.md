@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 
 ```
-docker-compose up
+docker compose up
 ```
 
 6. Install [Docker DNS-Gen](https://github.com/jderusse/docker-dns-gen) to create a DNS server in Docker
