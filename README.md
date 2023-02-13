@@ -1,5 +1,9 @@
 # SWaTEval Framework
 
+This repository has been published as a part of the following paper. Please consider citing this paper if you use our work in your research.
+
+> Borcherding, A.; Penkov, N.; Giraud, M. and Beyerer, J. (2023). SWaTEval: An Evaluation Framework for Stateful Web Application Testing. In Proceedings of the 9th International Conference on Information Systems Security and Privacy - ICISSP
+
 ## Setup
 
 **Note:** The project runs under Python 3.8 
@@ -40,7 +44,7 @@ docker compose up
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/jderusse/docker-dns-gen/master/bin/install)"
 ```
 
-5. Run the SWaTEval framework:
+7. Run the SWaTEval framework:
 
 ```
 python main.py
